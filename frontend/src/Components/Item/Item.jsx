@@ -6,7 +6,7 @@ function Item(props) {
   return (
     <div className="item">
       <Link to={`/product/${props.id}`}>
-        <img src={props.image} alt="img" />
+        <img onClick={window.scrollTo(0,0)} src={props.image} alt="img" />
       </Link>
       <p>{props.name}</p>
       <div className="item-prices">
