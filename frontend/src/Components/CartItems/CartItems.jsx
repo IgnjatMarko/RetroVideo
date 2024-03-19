@@ -38,6 +38,7 @@ export const CartItems = () => {
                   alt=""
                 />
               </div>
+              <hr />
             </div>
           );
         }
