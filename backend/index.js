@@ -73,6 +73,10 @@ const Product = mongoose.model("Product",{
         type:Boolean,
         default:true,
     },
+    quantity:{
+        type:Number,
+        required:true,
+    }
 });
 
 app.post('/addproduct', async (req,res)=>{
@@ -95,6 +99,7 @@ app.post('/addproduct', async (req,res)=>{
         category:req.body.category,
         new_price:req.body.new_price,
         old_price:req.body.old_price,
+        quantity:15,
     });
     console.log(product);
     await product.save();
@@ -107,7 +112,21 @@ app.post('/addproduct', async (req,res)=>{
 
 // Creating API for deleting products
 
+app.post('/removeproduct', async (req,res)=>{
+    await Product.findOneAndDelete({id:req.body.id});
+    console.log("Removed");
+    res.json({
+        success:true,
+        name:req.body.name,
+    });
+});
 
+// Creating API for getting all products
+app.get('/allproducts', async (req,res)=> {
+    let products = await Product.find({});
+    console.log("All Products Fetched");
+    res.send(products);
+})
 
 app.listen(port, (error) => {
   if (!error) {
