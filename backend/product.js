@@ -84,4 +84,25 @@ module.exports = {
     console.log("All Products Fetched");
     res.send(products);
   },
+  newCollectionData: async (req, res) => {
+    let products = await Product.find({});
+    let newcollection = products.slice(1).slice(-8);
+    console.log("New Collection Fetched");
+    res.send(newcollection);
+  },
+  popularShopData: async (req, res) => {
+    let products = await Product.find({ category: "women" });
+    let popular_in_shop3 = products.slice(0, 4);
+    console.log("Popular in Shop 3 fetched");
+    res.send(popular_in_shop3);
+  },
+  cartData: async (req, res) => {
+    let userData = await Users.findOne({ _id: req.user.id });
+    userData.cartData[req.body.itemId] += 1;
+    await Users.findOneAndUpdate(
+      { _id: req.user.id },
+      { cartData: userData.cartData }
+    );
+    res.send("Added");
+  },
 };
