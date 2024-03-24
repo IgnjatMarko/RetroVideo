@@ -14,6 +14,22 @@ const Product = mongoose.model("Product", {
     type: String,
     required: true,
   },
+  extraImages: {
+    type: [String],
+    default: [],
+  },
+  description: { 
+    type: String,
+    default: "",
+  },
+  tags: {
+    type: [String],
+    default: [],
+  },
+  rating: {
+    type: String,
+    default: "",
+  },
   category: {
     type: String,
     required: true,
@@ -58,6 +74,10 @@ module.exports = {
       id: id,
       name: req.body.name,
       image: req.body.image,
+      extraImages: req.body.extraImages,
+      description: req.body.description,
+      tags: req.body.tags,
+      rating: req.body.rating,
       category: req.body.category,
       new_price: req.body.new_price,
       old_price: req.body.old_price,
@@ -95,14 +115,5 @@ module.exports = {
     let popular_in_shop3 = products.slice(0, 4);
     console.log("Popular in Shop 3 fetched");
     res.send(popular_in_shop3);
-  },
-  cartData: async (req, res) => {
-    let userData = await Users.findOne({ _id: req.user.id });
-    userData.cartData[req.body.itemId] += 1;
-    await Users.findOneAndUpdate(
-      { _id: req.user.id },
-      { cartData: userData.cartData }
-    );
-    res.send("Added");
   },
 };
