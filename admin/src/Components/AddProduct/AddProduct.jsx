@@ -13,7 +13,7 @@ const AddProduct = () => {
     description: "",
     rating: "",
     tags: [],
-    category: "women",
+    category: "Rent DVDs",
     new_price: "",
     old_price: "",
   });
@@ -146,9 +146,9 @@ const AddProduct = () => {
           name="category"
           className="add-product-selector"
         >
-          <option value="women">Women</option>
-          <option value="men">Men</option>
-          <option value="kid">Kids</option>
+          <option value="Rent DVDs">Rent DVDs</option>
+          <option value="Buy DVDs">Buy DVDs</option>
+          <option value="Digital">Digital Movies</option>
         </select>
       </div>
       <div className="addproduct-itemfields">

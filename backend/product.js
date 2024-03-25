@@ -111,7 +111,7 @@ module.exports = {
     res.send(newcollection);
   },
   popularShopData: async (req, res) => {
-    let products = await Product.find({ category: "women" });
+    let products = await Product.find({ category: "Buy DVDs" });
     let popular_in_shop3 = products.slice(0, 4);
     console.log("Popular in Shop 3 fetched");
     res.send(popular_in_shop3);

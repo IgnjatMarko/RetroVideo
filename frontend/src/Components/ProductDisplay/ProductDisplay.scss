@@ -11,6 +11,7 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+            cursor: pointer;
 
             img {
                 height: 163px;
@@ -20,6 +21,7 @@
         .productdisplay-main-img {
             width: 586px;
             height: 700px;
+            transition: 1s ease-in-out;
         }
     }
 
@@ -39,8 +41,8 @@
             align-items: center;
             margin-top: 13px;
             gap: 5px;
-            color: #1c1c1c;
-            font-size: 16px;
+            color: #FF4141;
+            font-size: 24px;
         }
 
         .productdisplay-right-prices {

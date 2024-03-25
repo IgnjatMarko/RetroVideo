@@ -20,10 +20,12 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
+      <Link style={{ textDecoration: "none" }} to="/">
       <div className="nav-logo">
         <img src={logo} alt="logo" />
         <p>Retro Video</p>
       </div>
+      </Link>
       <img className="nav-dropdown" onClick={dropdownToggle} src={dropdown_icon} alt="dropdown-icon" />
       <ul ref={menuRef} className="nav-menu">
         <li
@@ -32,39 +34,39 @@ const Navbar = () => {
           }}
         >
           <Link style={{ textDecoration: "none" }} to="/">
-            Shop
+            Home
           </Link>
           {menu === "shop" ? <hr /> : <></>}
         </li>
         <li
           onClick={() => {
-            setMenu("shop2");
+            setMenu("Rent DVDs");
           }}
         >
-          <Link style={{ textDecoration: "none" }} to="/shop2">
-            Shop2
+          <Link style={{ textDecoration: "none" }} to="/rentdvds">
+            Rent DVDs
           </Link>
-          {menu === "shop2" ? <hr /> : <></>}
+          {menu === "Rent DVDs" ? <hr /> : <></>}
         </li>
         <li
           onClick={() => {
-            setMenu("shop3");
+            setMenu("Buy DVDs");
           }}
         >
-          <Link style={{ textDecoration: "none" }} to="/shop3">
-            Shop3
+          <Link style={{ textDecoration: "none" }} to="/buydvds">
+            Buy DVDs
           </Link>
-          {menu === "shop3" ? <hr /> : <></>}
+          {menu === "Buy DVDs" ? <hr /> : <></>}
         </li>
         <li
           onClick={() => {
-            setMenu("shop4");
+            setMenu("Digital");
           }}
         >
-          <Link style={{ textDecoration: "none" }} to="/shop4">
-            Shop4
+          <Link style={{ textDecoration: "none" }} to="/digitalmovies">
+            Digital Movies
           </Link>
-          {menu === "shop4" ? <hr /> : <></>}
+          {menu === "Digital" ? <hr /> : <></>}
         </li>
       </ul>
       <div className="nav-login-cart">

@@ -14,7 +14,7 @@ function Popular() {
 
   return (
     <div className="popular">
-      <h1>Popular in Shop2</h1>
+      <h1>Most Rented DVDs</h1>
       <hr />
       <div className="popular-item">
         {popularProducts.map((item, i) => {
