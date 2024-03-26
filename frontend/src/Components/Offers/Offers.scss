@@ -21,8 +21,10 @@
 
         p {
             color: #171717;
+            max-width: 360px;
             font-size: 22px;
             font-weight: 600;
+            text-wrap: pretty;
         }
 
         button {
@@ -58,7 +60,8 @@
                 font-size: 40px;
             }
 
-            p {
+            p { 
+                max-width: 300px;
                 font-size: 18px;
             }
 

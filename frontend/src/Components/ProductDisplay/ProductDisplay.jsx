@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./ProductDisplay.scss";
 import { ShopContext } from "../../Context/ShopContext";
 
@@ -7,6 +7,10 @@ function ProductDisplay(props) {
   const { addToCart } = useContext(ShopContext);
 
   const [mainImage, setMainImage] = useState(product.image);
+
+  useEffect(() => {
+    setMainImage(product.image);
+  }, [product]);
 
   const handleImageClick = (image) => {
     setMainImage(image);

@@ -1,17 +1,39 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Navbar.scss";
 
 import logo from "../Assets/logo.png";
 import cart_icon from "../Assets/cart_icon.png";
 import dropdown_icon from "../Assets/drop-down.png";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
-  const {getTotalCartItems} = useContext(ShopContext);
+
+  const location = useLocation();
   const menuRef = useRef();
+
+  const {getTotalCartItems} = useContext(ShopContext);
+  
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/":
+        setMenu("Home");
+        break;
+      case "/rentdvds":
+        setMenu("Rent DVDs");
+        break;
+      case "/buydvds":
+        setMenu("Buy DVDs");
+        break;
+      case "/digitalmovies":
+        setMenu("Digital");
+        break;
+      default:
+        setMenu("Home");
+    }
+  }, [location]);
 
   const dropdownToggle = (e) => {
     menuRef.current.classList.toggle('nav-menu-visible');
@@ -36,7 +58,7 @@ const Navbar = () => {
           <Link style={{ textDecoration: "none" }} to="/">
             Home
           </Link>
-          {menu === "shop" ? <hr /> : <></>}
+          {(menu === "Home" || location.pathname === "/") ? <hr /> : <></>}
         </li>
         <li
           onClick={() => {

@@ -148,7 +148,7 @@ const AddProduct = () => {
         >
           <option value="Rent DVDs">Rent DVDs</option>
           <option value="Buy DVDs">Buy DVDs</option>
-          <option value="Digital">Digital Movies</option>
+          <option value="Digital Movies">Digital Movies</option>
         </select>
       </div>
       <div className="addproduct-itemfields">

@@ -16,7 +16,7 @@ function Product() {
       <Breadcrumb product={product}/>
       <ProductDisplay product={product}/>
       <DescriptionBox  product={product}/>
-      <RelatedProducts/>
+      <RelatedProducts product={product}/>
     </div>
   )
 }
