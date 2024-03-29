@@ -28,12 +28,12 @@ function LoginSignup() {
       .then((response) => response.json())
       .then((data) => (responseData = data));
 
-      if (responseData.success) {
-        localStorage.setItem('auth-token',responseData.token);
-        window.location.replace("/");
-      } else {
-        alert(responseData.errors)
-      }
+    if (responseData.success) {
+      localStorage.setItem("auth-token", responseData.token);
+      window.location.replace("/");
+    } else {
+      alert(responseData.errors);
+    }
   };
 
   const signup = async () => {
@@ -51,12 +51,12 @@ function LoginSignup() {
       .then((response) => response.json())
       .then((data) => (responseData = data));
 
-      if (responseData.success) {
-        localStorage.setItem('auth-token',responseData.token);
-        window.location.replace("/");
-      } else {
-        alert(responseData.errors)
-      }
+    if (responseData.success) {
+      localStorage.setItem("auth-token", responseData.token);
+      window.location.replace("/");
+    } else {
+      alert(responseData.errors);
+    }
   };
 
   return (
@@ -124,8 +124,17 @@ function LoginSignup() {
         )}
 
         <div className="loginsignup-agree">
-          <input type="checkbox" name="" id="" />
-          <p>By continuing, I agree to the terms of use and privacy policy. </p>
+          {state === "Sign Up" ? (
+            <p>
+              By continuing, I agree to the terms of use and privacy policy.{" "}
+            </p>
+          ) : (
+            <p>
+              When you use our services, you’re trusting us with your
+              information. We understand this is a big responsibility and work
+              hard to protect your information and put you in control.
+            </p>
+          )}
         </div>
       </div>
     </div>

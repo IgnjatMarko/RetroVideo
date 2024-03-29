@@ -41,7 +41,7 @@ const AddProduct = () => {
       extraImages: [...productDetails.extraImages, imageInput],
     });
     setImageInput("");
-    alert('Image URL added successfully!');
+    alert("Image URL added successfully!");
   };
 
   const Add_Product = async () => {
@@ -80,6 +80,18 @@ const AddProduct = () => {
         .then((data) => {
           data.success ? alert("Product added") : alert("Failed");
         });
+
+      setProductDetails({
+        name: "",
+        image: "",
+        extraImages: [],
+        description: "",
+        rating: "",
+        tags: [],
+        category: "Rent DVDs",
+        new_price: "",
+        old_price: "",
+      });
     }
   };
 
@@ -176,7 +188,9 @@ const AddProduct = () => {
               name="extraImages"
               placeholder="Enter image URL"
             />
-            <button className="addproduct-extraimage" type="submit">Add extra image</button>
+            <button className="addproduct-extraimage" type="submit">
+              Add extra image
+            </button>
           </form>
         </div>
       </div>
@@ -196,6 +210,13 @@ const AddProduct = () => {
             <option value="Action">Action</option>
             <option value="Adventure">Adventure</option>
             <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Crime">Crime</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Drama">Drama</option>
+            <option value="Horror">Horror</option>
+            <option value="Fantasy">Fantasy</option>
           </select>
         </label>
       </div>

@@ -50,6 +50,10 @@
     }
 }
 
+.rounded {
+    border-radius: 16px;
+}
+
 @media(max-width:1280px) {
     .offers {
         padding: 0px 80px;
@@ -75,8 +79,10 @@
         .offers-right {
             padding-top: 30px;
 
-            img {
+            iframe {
                 width: 300px;
+
+                
             }
         } 
     }
@@ -107,7 +113,7 @@
         .offers-right {
             padding-top: 10px;
             
-            img {
+            iframe {
                 width: 200px;
             }
         } 
@@ -134,7 +140,7 @@
             }
         }
 
-        .offers-right img {
+        .offers-right iframe {
                 width: 180px;
             } 
     }
@@ -162,7 +168,7 @@
             }
         }
 
-        .offers-right img {
+        .offers-right iframe {
                 width: 120px;
         }
     }

@@ -68,6 +68,7 @@ const fetchUser = async (req, res, next) => {
     try {
       const data = jwt.verify(token, "secret_ecom");
       req.user = data.user;
+      console.log("User authenticated:", req.user);
       next();
     } catch (error) {
       res
@@ -81,6 +82,7 @@ const fetchUser = async (req, res, next) => {
 
 app.post("/signup", users.signup);
 app.post("/login", users.login);
+app.post("/getcart", fetchUser, users.getCartData)
 app.post("/addtocart", fetchUser, users.addToCart);
 app.post("/removefromcart", fetchUser, users.removeFromCart);
 

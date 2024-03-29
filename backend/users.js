@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
 const Users = mongoose.model("Users", {
   name: {
@@ -39,7 +40,10 @@ async function signup(req, res) {
     password: req.body.password,
     cartData: cart,
   });
+  const saltRounds = 10;
+  const hashedPassword = await bcrypt.hash(user.password, saltRounds);
 
+  user.password = hashedPassword;
   await user.save();
 
   const data = {
@@ -55,7 +59,7 @@ async function signup(req, res) {
 async function login(req, res) {
   let user = await Users.findOne({ email: req.body.email });
   if (user) {
-    const passCompare = req.body.password === user.password;
+    const passCompare = await bcrypt.compare(req.body.password, user.password);;
 
     if (passCompare) {
       const data = {
@@ -64,7 +68,11 @@ async function login(req, res) {
         },
       };
       const token = jwt.sign(data, "secret_ecom");
-      res.json({ success: true, token });
+      res.json({
+        success: true,
+        token,
+        cartData: user.cartData, // Add this line
+      });
     } else {
       res.json({ success: false, errors: "Wrong password" });
     }
@@ -97,9 +105,16 @@ async function removeFromCart(req, res) {
   }
 }
 
+async function getCartData(req,res) {
+  console.log("GetCart");
+  let userData = await Users.findOne({_id:req.user.id});
+  res.json(userData.cartData);
+}
+
 module.exports = {
   signup,
   login,
   addToCart,
   removeFromCart,
+  getCartData
 };
