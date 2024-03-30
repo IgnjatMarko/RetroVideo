@@ -58,6 +58,13 @@ function ProductDisplay(props) {
           <div className="productdisplay-right-price-new">
             ${product.new_price}
           </div>
+          {product.quantity === 0 ? (
+          <div className="productdisplay-right-price-new">Out of Stock</div>
+        ) : product.quantity < 5 ? (
+          <div className="productdisplay-right-price-new">Low Stock</div>
+        ) : (
+          <></>
+        )}
         </div>
         <div className="productdisplay-right-description">
           {product.description}

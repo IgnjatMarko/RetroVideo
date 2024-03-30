@@ -6,6 +6,7 @@ import Item from "../Components/Item/Item";
 
 function ShopCategory(props) {
   const { all_product } = useContext(ShopContext);
+
   return (
     <div className="shop-category">
       <img className="shopcategory-banner" src={props.banner} alt="banner" />
@@ -28,6 +29,8 @@ function ShopCategory(props) {
                 image={item.image}
                 new_price={item.new_price}
                 old_price={item.old_price}
+                quantity={item.quantity}
+                tags={item.tags}
               />
             );
           } else {

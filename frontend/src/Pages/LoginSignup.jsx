@@ -105,8 +105,7 @@ function LoginSignup() {
                 setState("Login");
               }}
             >
-              {" "}
-              Log in Here
+              Login Here
             </span>
           </p>
         ) : (

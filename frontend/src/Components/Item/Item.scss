@@ -1,8 +1,8 @@
 .item {
-    width: 280px;
+    width: 270px;
 
     img {
-        width: 280px;
+        width: 270px;
     }
 
     p {
@@ -24,6 +24,10 @@
             font-size: 18px;
             font-weight: 500;
             text-decoration: line-through;
+        }
+
+        .red {
+            color: red;
         }
     }
 
@@ -83,7 +87,15 @@
 
         .item-prices .item-price-old {
             font-size: 12px;
-        }       
+        }
+        
+        .item-prices .red {
+            font-size: 10px;
+        }
+    }
+
+    .red {
+        font-size: 10px;
     }
 }
 
