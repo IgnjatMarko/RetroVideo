@@ -5,31 +5,44 @@ import Item from "../Components/Item/Item";
 
 function ShopCategory(props) {
   const { all_product } = useContext(ShopContext);
+
   const [selectedTag, setSelectedTag] = useState("");
+  const [visibility, setVisibility] = useState(8);
 
   const handleTagChange = (event) => {
     setSelectedTag(event.target.value);
+  };
+
+  const handleLoadMore = () => {
+    setVisibility((prev) => prev + 8);
   };
 
   const filteredProducts = all_product.filter((item) => {
     return item.category === props.category;
   });
 
-  const filteredItems = selectedTag === "" ? filteredProducts : filteredProducts.filter((item) => {
-    return item.tags.includes(selectedTag);
-  });
+  const filteredItems =
+    selectedTag === ""
+      ? filteredProducts
+      : filteredProducts.filter((item) => {
+          return item.tags.includes(selectedTag);
+        });
 
-  console.log(filteredProducts);
 
   return (
     <div className="shop-category">
       <img className="shopcategory-banner" src={props.banner} alt="banner" />
       <div className="shopcategory-indexSort">
         <p>
-          <span>Showing 1-12</span> out of 36 products
+          <span>Showing {Math.min(visibility, filteredItems.length)}</span> out
+          of {filteredProducts.length} products
         </p>
-        <select className="shopcategory-sort" value={selectedTag} onChange={handleTagChange}>
-          <option value="">Genre Tags</option>
+        <select
+          className="shopcategory-sort"
+          value={selectedTag}
+          onChange={handleTagChange}
+        >
+          <option value="">All Genres</option>
           <option value="Action">Action</option>
           <option value="Adventure">Adventure</option>
           <option value="Sci-Fi">Sci-Fi</option>
@@ -43,7 +56,7 @@ function ShopCategory(props) {
         </select>
       </div>
       <div className="shopcategory-products">
-        {filteredItems.map((item, i) => (
+        {filteredItems.slice(0, visibility).map((item, i) => (
           <Item
             key={i}
             id={item.id}
@@ -56,7 +69,14 @@ function ShopCategory(props) {
           />
         ))}
       </div>
-      <div className="shopcategory-loadmore">Explore More</div>
+
+      {filteredItems && visibility < filteredItems.length && (
+        <a href="#footer">
+          <div onClick={handleLoadMore} className="shopcategory-loadmore">
+            Explore More
+          </div>
+        </a>
+      )}
     </div>
   );
 }

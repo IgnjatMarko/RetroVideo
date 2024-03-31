@@ -12,7 +12,7 @@
         gap: 10px;
 
         p {
-            color: #171717;
+            color: #626262;
             font-size: 38px;
             font-weight: 600;
         }
@@ -48,7 +48,7 @@
 
             a {
                 text-decoration: none;
-                color: black;
+                color: #515151;
             }
         }
     }
@@ -62,15 +62,18 @@
             width: 157px;
             height: 58px;
             outline: none;
-            border: 1px solid #7a7a7a;
-            border-radius: 75px;
-            color: #515151;
+            border: 1px solid #FEE0E0;
+            border-radius: 11px;
+            background-color: #FFE7E7;
+            color: #626262;
             font-size: 20px;
-            font-weight: white;
+            font-weight: 700;
             cursor: pointer;
 
-            &:active {
-                background-color: #f3f3f3;
+            &:hover {
+                background-color: #D33A2C;
+                box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+                color: #FFFFFF;
             }
         }
 

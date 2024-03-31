@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from 'sweetalert2';
 import "./SCSS/LoginSignup.scss";
 
 function LoginSignup() {
@@ -37,7 +38,17 @@ function LoginSignup() {
   };
 
   const signup = async () => {
-    console.log("signup suxs", formData);
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!emailPattern.test(formData.email)) {
+      Swal.fire('Oops...', 'Please enter a valid email address', 'error');
+      return;
+    }
+
+    if (formData.password.length < 4) {
+      Swal.fire('Oops...', 'Password must be at least 4 characters long', 'error');
+      return;
+    }
+    console.log("signup success", formData);
 
     let responseData;
     await fetch("http://localhost:4000/signup", {

@@ -31,7 +31,7 @@ const Navbar = () => {
         setMenu("Digital");
         break;
       default:
-        setMenu("Home");
+        setMenu("");
     }
   }, [location]);
 

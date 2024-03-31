@@ -5,7 +5,6 @@ import { ShopContext } from "../../Context/ShopContext";
 function ProductDisplay(props) {
   const { product } = props;
   const { addToCart } = useContext(ShopContext);
-
   const [mainImage, setMainImage] = useState(product.image);
 
   useEffect(() => {
