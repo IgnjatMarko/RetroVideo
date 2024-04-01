@@ -18,7 +18,7 @@ function LoginSignup() {
     console.log("login suxs", formData);
 
     let responseData;
-    await fetch("http://localhost:4000/login", {
+    await fetch("https://retro-backend.onrender.com/login", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -51,7 +51,7 @@ function LoginSignup() {
     console.log("signup success", formData);
 
     let responseData;
-    await fetch("http://localhost:4000/signup", {
+    await fetch("https://retro-backend.onrender.com/signup", {
       method: "POST",
       headers: {
         Accept: "application/form-data",

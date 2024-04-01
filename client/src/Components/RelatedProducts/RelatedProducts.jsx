@@ -7,7 +7,7 @@ function RelatedProducts(props) {
   const [relatedProducts,setRelatedProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/allproducts")
+    fetch("https://retro-backend.onrender.com/allproducts")
     .then((response) => response.json())
     .then((data) => {
         let productsInCategory = data.filter(item => item.category === product.category);
