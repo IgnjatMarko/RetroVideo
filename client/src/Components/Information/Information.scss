@@ -1,17 +1,18 @@
 .information {
-    width: 65%;
-    height: 60vh;
+//    width: 65%;
+    height: 90vh;
     display: flex;
-    margin: auto;
+    justify-content: space-between;
     padding: 0px 80px;
     margin: 150px auto;
     background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
 
     .information-left {
-        flex: 1;
+    //    flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        width: 48%;
         min-width: 250px;
 
         h1 {
@@ -42,9 +43,11 @@
     }
 
     .information-right {
-        flex: 1;
+    //    flex: 1;
         display: flex;
         align-items: center;
+        justify-content: center;
+        width: 48%;
 
         iframe {
             width: 500px;
@@ -58,7 +61,7 @@
 
 @media(max-width:1280px) {
     .information {        
-
+        height: 70vh;
         .information-left {
             h1 {
                 font-size: 40px;
@@ -88,6 +91,7 @@
 
 @media(max-width:1024px) {
     .information {
+        height: 60vh;
          padding: 0px 60px;
 
         .information-left {
@@ -108,6 +112,7 @@
         }
 
         .information-right {
+        //    width: 100%;
             padding-top: 10px;
             
             iframe {
@@ -120,6 +125,7 @@
 
 @media(max-width:800px) {
     .information {
+        height: 50vh;
         flex-direction: column;
         align-items: center;
 
@@ -162,7 +168,7 @@
 
 @media(max-width:500px) {
     .information {
-        height: 70vh;
+        height: 90vh;
 
         .information-left {
             h1 {

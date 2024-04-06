@@ -41,6 +41,7 @@
 
             p {
                 text-decoration: none;
+                color: #454545;
             }
 
             img {
@@ -96,15 +97,17 @@
         margin: 60px 50px;
 
         .cartitems-format-main {
-            grid-template-columns: 0.5fr 3fr 0.5fr 0.5fr 0.5fr 0.5fr;
+            grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
             gap: 20px;
             padding: 15px;
             font-size: 15px;
+            //3fr to 1fr change
         }
 
         div .cartitems-format {
             width: 100%;
             gap: 50px;
+            grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
 
             .carticon-product-icon {
                 height: 50px;
@@ -142,6 +145,24 @@
                     font-size: 13px;
                 }
             }
+        }
+    }
+}
+
+@media(max-width:1024px) {
+    .cartitems {
+
+        div .cartitems-format {
+            grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        }
+    }
+}
+
+@media(max-width:800px) {
+    .cartitems {
+
+        div .cartitems-format {
+            grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
         }
     }
 }
