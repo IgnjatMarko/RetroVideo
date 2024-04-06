@@ -1,6 +1,6 @@
 .information {
 //    width: 65%;
-    height: 90vh;
+//    height: 90vh;
     display: flex;
     justify-content: space-between;
     padding: 0px 80px;
@@ -61,7 +61,7 @@
 
 @media(max-width:1280px) {
     .information {        
-        height: 70vh;
+    //    height: 70vh;
         .information-left {
             h1 {
                 font-size: 40px;
@@ -91,7 +91,7 @@
 
 @media(max-width:1024px) {
     .information {
-        height: 60vh;
+    //      height: 60vh;
          padding: 0px 60px;
 
         .information-left {
@@ -125,7 +125,7 @@
 
 @media(max-width:800px) {
     .information {
-        height: 50vh;
+    //    height: 50vh;
         flex-direction: column;
         align-items: center;
 
@@ -134,7 +134,7 @@
                 font-size: 22px;
                 display: flex;
                 justify-content: center;
-                margin-bottom: 30px;
+                margin: 30px;
             }
 
             p {
@@ -168,7 +168,7 @@
 
 @media(max-width:500px) {
     .information {
-        height: 90vh;
+    //    height: 90vh;
 
         .information-left {
             h1 {
