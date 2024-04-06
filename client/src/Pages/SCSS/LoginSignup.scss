@@ -9,7 +9,7 @@
         width: 580px;
         height: 600px;
         background: white;
-        margin: auto;
+        margin: 40px auto;
         padding: 40px 60px;
 
         h1 {
@@ -117,7 +117,7 @@
 
 @media(max-width:800px) {
     .loginsignup {
-       height: 60vh;
+//       height: 60vh;
 
         .loginsignup-container {
             padding: 20px 30px;

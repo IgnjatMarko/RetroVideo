@@ -37,6 +37,11 @@
             height: 50px;
             border: 2px solid #ebebeb;
             background: #fff;
+            gap: 8px;
+
+            p {
+                text-decoration: none;
+            }
 
             img {
                 cursor: pointer;
@@ -156,7 +161,6 @@
 
             .carticon-addremove-icon {
                 margin: 0;
-                width: 40%;
             }
         }
 
@@ -179,6 +183,27 @@
                 .cartitems-promobox {
                     width: auto;
                     max-width: 500px;
+
+                    input{
+                        width: 100%;
+                    }
+
+                    button {
+                        width: 80px;
+                        margin-left: -85px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:800px) {
+    .cartitems {
+        .cartitems-down {
+            .cartitems-promocode {
+                .cartitems-promobox {
+                    width: 262px;
 
                     input{
                         width: 100%;
