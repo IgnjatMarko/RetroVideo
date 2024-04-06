@@ -3,8 +3,8 @@
     height: 60vh;
     display: flex;
     margin: auto;
-    padding: 0px 140px;
-    margin-bottom: 100px;
+    padding: 0px 80px;
+    margin: 150px auto;
     background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
 
     .information-left {
@@ -120,7 +120,6 @@
 
 @media(max-width:800px) {
     .information {
-        margin-bottom: 80px;
         flex-direction: column;
         align-items: center;
 
@@ -164,7 +163,6 @@
 @media(max-width:500px) {
     .information {
         height: 70vh;
-        margin-bottom: 30px;
 
         .information-left {
             h1 {

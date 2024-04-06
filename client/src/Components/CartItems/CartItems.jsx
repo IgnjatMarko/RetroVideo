@@ -70,13 +70,6 @@ export const CartItems = () => {
             </div>
             <button>PROCEED TO CHECKOUT</button>
         </div>
-        <div className="cartitems-promocode">
-            <p>Enter in a PROMO code if you have one</p>
-            <div className="cartitems-promobox">
-                <input type="text" placeholder="Promo code" />
-                <button>Submit</button>
-            </div>
-        </div>
       </div>
     </div>
   );
