@@ -165,7 +165,7 @@
             rotate: -90deg;
             width: 30px;
             transition: 0.5s;
-
+            cursor: pointer;
             
         }
 
@@ -202,6 +202,7 @@
         .nav-menu {
             height: 70px;
             top: 50px;
+            gap: 12px;
         }
 
         .nav-login-cart {
