@@ -63,7 +63,7 @@
         cursor: pointer;
 
         img {
-          width: 55%;
+          width: 24px;
         }
       }
     }
@@ -94,6 +94,10 @@
         button {
           height: 50px;
           font-size: 14px;
+
+          img {
+            width: 20px;
+          }
         }
       }
     }
