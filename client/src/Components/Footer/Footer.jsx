@@ -21,13 +21,19 @@ function Footer() {
         </ul>
         <div className="footer-social-icon">
             <div className="footer-icons-container">
+                <a href="https://www.instagram.com/">
                 <img src={instagram_icon} alt="instagram" />
+                </a>
             </div>
             <div className="footer-icons-container">
-                <img src={pinterest_icon} alt="pinterest" />
+                <a href="https://www.pinterest.com/">
+                    <img src={pinterest_icon} alt="pinterest" />
+                </a>
             </div>
             <div className="footer-icons-container">
-                <img src={whatsapp_icon} alt="whatsapp" />
+                <a href="https://web.whatsapp.com/">
+                    <img src={whatsapp_icon} alt="whatsapp" />
+                </a>
             </div>
         </div>
         <div className="footer-copyright">

@@ -5,11 +5,13 @@
     align-items: center;
     gap: 50px;
     margin-top: 50px;
+    z-index: -1;
 
     .footer-logo {
         display: flex;
         align-items: center;
         gap: 20px;
+        z-index: -1;
 
         p {
             color: #383838;
