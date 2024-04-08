@@ -22,6 +22,8 @@
     .checkout-fields {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       gap: 29px;
       margin-top: 30px;
 
@@ -43,15 +45,16 @@
       }
 
       .extra {
-        width: 30%;
+        width: 40%;
       }
 
       img {
-        width: 64px;
+      //  width: 64px;
       }
 
       button {
-        width: 25%;
+        width: 15%;
+        height: 72px;
         color: white;
         background: #ff4141;
         border: none;

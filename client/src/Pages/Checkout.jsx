@@ -1,6 +1,7 @@
 import React from "react";
 import Swal from "sweetalert2";
 import "./SCSS/Checkout.scss";
+import arrow_icon from "../Components/Assets/arrow.png";
 
 export default function Checkout() {
 
@@ -35,7 +36,7 @@ export default function Checkout() {
         <div className="checkout-fields">
           <input type="text" name="name" placeholder="MM/YYYY" className="extra"/>
           <input type="text" name="name" placeholder="Cvv" className="extra"/>
-          <button onClick={proceedHandler}>Proceed</button>
+          <button onClick={proceedHandler}><img src={arrow_icon} alt="" /></button>
         </div>
       </div>
     </div>
