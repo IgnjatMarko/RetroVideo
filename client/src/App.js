@@ -6,6 +6,7 @@ import ShopCategory from "./Pages/ShopCategory"
 import Product from "./Pages/Product"
 import Cart from "./Pages/Cart"
 import LoginSignup from "./Pages/LoginSignup";
+import Checkout from "./Pages/Checkout";
 import Footer from "./Components/Footer/Footer";
 import shop2_banner from './Components/Assets/banner_rentdvd.png'
 import shop3_banner from './Components/Assets/banner_buydvd.png'
@@ -26,6 +27,7 @@ function App() {
           </Route>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/login" element={<LoginSignup/>}/>
+          <Route path="/checkout" element={<Checkout/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

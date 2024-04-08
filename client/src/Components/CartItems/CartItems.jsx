@@ -2,10 +2,17 @@ import React, { useContext } from "react";
 import "./CartItems.scss";
 import { ShopContext } from "../../Context/ShopContext";
 import remove_icon from "../Assets/cart_cross_icon.png";
-import plus_icon from "../Assets/cart_plus_icon.png"
+import plus_icon from "../Assets/cart_plus_icon.png";
+import { Link } from "react-router-dom";
 
 export const CartItems = () => {
-  const { getTotalCartAmount, all_product, cartItems, removeFromCart, addToCart } = useContext(ShopContext);
+  const {
+    getTotalCartAmount,
+    all_product,
+    cartItems,
+    removeFromCart,
+    addToCart,
+  } = useContext(ShopContext);
   return (
     <div className="cartitems">
       <div className="cartitems-format-main">
@@ -31,9 +38,15 @@ export const CartItems = () => {
                 <p>${elem.new_price}</p>
                 <button className="cartitems-quantity">
                   <p>{cartItems[elem.id]}</p>
-                  <img src={plus_icon} alt="" onClick={()=> {addToCart(elem.id)}}/>
+                  <img
+                    src={plus_icon}
+                    alt=""
+                    onClick={() => {
+                      addToCart(elem.id);
+                    }}
+                  />
                 </button>
-                <p>${elem.new_price*cartItems[elem.id]}</p>
+                <p>${elem.new_price * cartItems[elem.id]}</p>
                 <img
                   className="carticon-addremove-icon"
                   src={remove_icon}
@@ -47,28 +60,30 @@ export const CartItems = () => {
             </div>
           );
         }
-        return null
+        return null;
       })}
       <div className="cartitems-down">
         <div className="cartitems-total">
-            <h1>Cart Totals</h1>
-            <div>
-                <div className="cartitems-total-item">
-                    <p>Subtotal</p>
-                    <p>${getTotalCartAmount()}</p>
-                </div>
-                <hr />
-                <div className="cartitems-total-item">
-                    <p>Shipping Fee</p>
-                    <p>Free</p>
-                </div>
-                <hr />
-                <div className="cartitems-total-item">
-                    <h3>Total</h3>
-                    <h3>${getTotalCartAmount()}</h3>
-                </div>
+          <h1>Cart Totals</h1>
+          <div>
+            <div className="cartitems-total-item">
+              <p>Subtotal</p>
+              <p>${getTotalCartAmount()}</p>
             </div>
+            <hr />
+            <div className="cartitems-total-item">
+              <p>Shipping Fee</p>
+              <p>Free</p>
+            </div>
+            <hr />
+            <div className="cartitems-total-item">
+              <h3>Total</h3>
+              <h3>${getTotalCartAmount()}</h3>
+            </div>
+          </div>
+          <Link style={{ textDecoration: "none" }} to="/checkout">
             <button>PROCEED TO CHECKOUT</button>
+          </Link>
         </div>
       </div>
     </div>
