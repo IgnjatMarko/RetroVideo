@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from "react";
-import { SyncLoader } from "react-spinners";
 
 export const ShopContext = createContext(null);
 
@@ -15,19 +14,13 @@ const getDefaultCart = () => {
 const ShopContextProvider = (props) => {
   const [all_product, setAll_Product] = useState([]);
   const [cartItems, setCartItems] = useState(getDefaultCart());
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
     fetch("https://retro-backend.onrender.com/allproducts")
       .then((response) => response.json())
-      .then((data) => {
-        setAll_Product(data);
-        setLoading(false);
-      });
+      .then((data) => setAll_Product(data));
 
     if (localStorage.getItem("auth-token")) {
-      setLoading(true);
       fetch("https://retro-backend.onrender.com/getcart", {
         method: "POST",
         headers: {
@@ -38,10 +31,7 @@ const ShopContextProvider = (props) => {
         body: "",
       })
         .then((response) => response.json())
-        .then((data) => {
-          setCartItems(data);
-          setLoading(false);
-        });
+        .then((data)=>setCartItems(data));
     }
   }, []);
 
@@ -113,7 +103,7 @@ const ShopContextProvider = (props) => {
 
   return (
     <ShopContext.Provider value={contextValue}>
-      {loading ? <SyncLoader /> : props.children}
+      {props.children}
     </ShopContext.Provider>
   );
 };
